@@ -1,3 +1,4 @@
+/* buttons */
 .btn i{
     margin-right: 0.8rem;
     font-size: 1.2rem;
@@ -7,12 +8,11 @@
    display: inline-block;
    width: 120px;
    padding: 0.5rem 0.8rem;
-   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+   box-shadow: 0 0 5px var(--shadow-2);
    border-radius: 3px; 
    margin-right: 0.8rem;
    margin-bottom: 1rem;
    text-align: center;
-   /* color: black; */
    font-size: 1.1rem;
 }
 
@@ -24,6 +24,8 @@ nav .btn {
     margin: 1rem 0;
 }
 
+
+/* country section */
 .country-container  {
     margin-top: 2rem;
     display: flex;
@@ -76,7 +78,7 @@ nav .btn {
     width: fit-content;
 }
 
-
+/* responsiveness - medium screens */
 @media(max-width: 1200px) {
     .country-container {
         flex-direction: column;
@@ -94,6 +96,7 @@ nav .btn {
     }
 }
 
+/* responsiveness - smaller screens */
 @media(max-width: 750px) {
     .border-countries,
     .country-details {

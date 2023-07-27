@@ -1,31 +1,35 @@
 :root {
-    --Dark-Blue: hsl(209, 23%, 22%);
-    --Very-Dark-Blue: hsl(207, 26%, 17%);
+    --Blue: hsl(209, 23%, 22%);
+    --Dark-Blue: hsl(207, 26%, 17%);
     --Very-Dark-Blue: hsl(200, 15%, 8%);
     --Dark-Gray: hsl(0, 0%, 52%);
     --Very-Light-Gray: hsl(0, 0%, 98%);
     --White: hsl(0, 0%, 100%);
+    --shadow-1: rgba(0, 0, 0, 0.3);
+    --shadow-2: rgba(0, 0, 0, 0.5);
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
 }
 
 a {
     text-decoration: none;
-
 }
 
-body {
-    /* background: #eeeeee13; */
+.container {
+    max-width: 85%;
+    margin: 0 auto;
 }
 
+
+/* Color modes */
 .light-mode {
-    background-color: hsl(0, 0%, 98%);
-    color: hsl(200, 15%, 8%);
+    background-color: var(--Very-Light-Gray);
+    color: var(--Very-Dark-Blue);
 }
 
 .light-mode header,
@@ -34,13 +38,13 @@ body {
 .light-mode #search-filter select,
 .light-mode #search-filter input[type="search"],
 .light-mode a {
-    background-color: hsl(0, 0%, 100%);
-    color: hsl(200, 15%, 8%);
+    background-color: var(--white);
+    color: var(--Very-Dark-Blue);
 }
 
 .dark-mode {
-    background-color: hsl(207, 26%, 17%);
-    color: hsl(0, 0%, 100%);
+    background-color: var(--Dark-Blue);
+    color: var(--white); 
 }
 
 .dark-mode header,
@@ -51,17 +55,12 @@ body {
 .dark-mode #search-filter input[type="search"]::placeholder,
 .dark-mode a {
     color: hsl(0, 0%, 100%);
-    background-color: hsl(209, 23%, 22%)
+    background-color: var(--Blue);
 }
 
-.container {
-    max-width: 85%;
-    margin: 0 auto;
-}
-
+/* header section */
 header {
-    /* background-color: #fff; */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px var(--shadow-2);
     margin-bottom: 2.5rem;
 }
 
@@ -77,7 +76,6 @@ header {
 }
 
 .header button {
-    /* background-color: #fff; */
     font-size: 1.1rem;
     border: none;
     display: flex;
@@ -89,6 +87,7 @@ header {
 }
 
 
+/* search and filter section */
 #search-filter {
     margin-bottom: 2.8rem;
 }
@@ -107,7 +106,6 @@ header {
     position: absolute;
     left: 22px;
     top: 13px;
-    /* color: #777; */
     font-size: 1rem;
 }
 
@@ -115,10 +113,9 @@ header {
     width: 450px;
     height: 45px;
     padding: 0.8rem 1rem 0.8rem 3.5rem;
-    /* background-color: #fff; */
     border: none;
     border-radius: 3px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2px var(--shadow-1);
     font-size: 1.1rem;
     outline: none;
 }
@@ -127,29 +124,24 @@ header {
     width: 250px;
     height: 45px;
     padding: 0 1rem;
-    /* background-color: #fff; */
     border: none;
     border-radius: 3px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2px var(--shadow-1);
     font-size: 1.1rem;
     outline: none;
 }
 
 
-
-
+/* countries section */
 #countries {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
-    /* grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); */
-    /* gap: 2rem; */
     justify-content: space-between;
 }
 
 .cards {
-    /* background-color: #fff; */
     border-radius: 5px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3px var(--shadow-2);
     margin-bottom: 3rem;
 }
 
@@ -177,7 +169,7 @@ header {
 }
 
 
-
+/* responsiveness - medium screens */
 @media(max-width: 850px) {
     .container {
         max-width: 93%;
@@ -188,6 +180,7 @@ header {
     }
 }
 
+/* responsiveness - smaller screens */
 @media(max-width: 650px) {
     html {
         font-size: 14px;

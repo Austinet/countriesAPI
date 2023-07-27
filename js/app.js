@@ -448,62 +448,10 @@
 //       ],
 //       "cioc": "ANG",
 //       "independent": true
-//     },
-//     {
-//       "name": "Anguilla",
-//       "topLevelDomain": [".ai"],
-//       "alpha2Code": "AI",
-//       "alpha3Code": "AIA",
-//       "callingCodes": ["1"],
-//       "capital": "The Valley",
-//       "altSpellings": ["AI"],
-//       "subregion": "Caribbean",
-//       "region": "Americas",
-//       "population": 13452,
-//       "latlng": [18.25, -63.16666666],
-//       "demonym": "Anguillian",
-//       "area": 91,
-//       "timezones": ["UTC-04:00"],
-//       "nativeName": "Anguilla",
-//       "numericCode": "660",
-//       "flags": {
-//         "svg": "https://flagcdn.com/ai.svg",
-//         "png": "https://flagcdn.com/w320/ai.png"
-//       },
-//       "currencies": [
-//         {
-//           "code": "XCD",
-//           "name": "East Caribbean dollar",
-//           "symbol": "$"
-//         }
-//       ],
-//       "languages": [
-//         {
-//           "iso639_1": "en",
-//           "iso639_2": "eng",
-//           "name": "English",
-//           "nativeName": "English"
-//         }
-//       ],
-//       "translations": {
-//         "br": "Anguilla",
-//         "pt": "Anguila",
-//         "nl": "Anguilla",
-//         "hr": "Angvila",
-//         "fa": "آنگویلا",
-//         "de": "Anguilla",
-//         "es": "Anguilla",
-//         "fr": "Anguilla",
-//         "ja": "アンギラ",
-//         "it": "Anguilla",
-//         "hu": "Anguilla"
-//       },
-//       "flag": "https://flagcdn.com/ai.svg",
-//       "independent": false
 //     }
 // ]
 
-// get data
+// Fetch data from API
 let url = "https://restcountries.com/v3.1/all"
 
 async function getData(url) {
@@ -518,7 +466,7 @@ getData(url)
 
 
 function viewSingleCountry(name) {
-    let country = data.filter(country => country.name == name)
+    let country = data.filter(country => country.name.common == name)
     localStorage.setItem('viewCountry', JSON.stringify(country))
     window.location.href = `country.html`
 }
@@ -529,11 +477,11 @@ function renderDB(data) {
     let dataDB = ""
     data.forEach(element => {
         dataDB += `
-        <div class="cards" onclick="viewSingleCountry('${element.name.official}')">
+        <div class="cards" onclick="viewSingleCountry('${element.name.common}')">
         <!-- <img src="img/Germany.JPG" alt="German flag"> -->
-         <img src="${element.flags.svg}" alt="${element.name.official} flag"> 
+         <img src="${element.flags.svg}" alt="${element.name.common} flag"> 
         <div class="card-details" >
-            <h2>${element.name.official}</h2>
+            <h2>${element.name.common}</h2>
             <p><span class="prop-name">Population:</span> <span class="prop-value">${element.population}</span></p>
             <p><span class="prop-name">Region:</span> <span class="prop-value">${element.region}</span></p>
             <p><span class="prop-name">Capital:</span> <span class="prop-value">${element.capital}</span></p>
@@ -553,8 +501,8 @@ searchInput.addEventListener('input', () => {
   let searchValue = searchInput.value.toUpperCase()
 
   for(let i = 0; i < cardsDB.length; i++) {
-    let h2 = cardsDB[i].querySelector('h2').textContent
-    if (h2.toUpperCase().indexOf(searchValue) > -1) {
+    let countryName = cardsDB[i].querySelector('h2').textContent
+    if (countryName.toUpperCase().indexOf(searchValue) > -1) {
       cardsDB[i].style.display = ""
     } else {
       cardsDB[i].style.display = "none"

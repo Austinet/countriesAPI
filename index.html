@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries REST API</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="body" class="light-mode">
+    <header>
+        <div class="header container">
+            <h1>Where in the world?</h1>
+            <button id="mode-btn"><i class="far fa-moon"></i><span class="mode">Dark Mode</span></button>
+        </div>
+    </header>
+    <main class="container">
+        <section id="search-filter">
+            <div>
+                <form action="">
+                    <div class="form-control search-div">
+                        <i class="fas fa-search"></i>
+                        <input type="search" name="search" id="search" placeholder="Search for a country..." on>
+                    </div>
+                    <select name="region" id="region">
+                        <option value="default">Filter by Region</option>
+                        <option value="Africa">Africa</option>
+                        <option value="America">America</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+                </form>
+            </div>
+        </section>
+        <section id="countries">
+
+        </section>
+    </main>
+    <script src="js/mode.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

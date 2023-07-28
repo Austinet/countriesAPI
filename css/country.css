@@ -1,3 +1,5 @@
+@import url(./styles.css);
+
 /* buttons */
 .btn i{
     margin-right: 0.8rem;
@@ -22,6 +24,11 @@
 
 nav .btn {
     margin: 1rem 0;
+}
+
+/* Color modes */
+.dark-mode .country-details-container *{
+    color: var(--White);
 }
 
 

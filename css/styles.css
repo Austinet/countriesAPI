@@ -43,6 +43,10 @@ a {
     color: var(--Very-Dark-Blue);
 }
 
+.dark-mode .search-div i {
+    color: var(--Very-Dark-Blue);
+}
+
 .dark-mode {
     background-color: var(--Dark-Blue);
     color: var(--white); 
@@ -55,8 +59,12 @@ a {
 .dark-mode #search-filter input[type="search"],
 .dark-mode #search-filter input[type="search"]::placeholder,
 .dark-mode a {
-    color: hsl(0, 0%, 100%);
+    color: var(--White);
     background-color: var(--Blue);
+}
+
+.dark-mode .search-div i {
+    color: var(--White);
 }
 
 /* header section */

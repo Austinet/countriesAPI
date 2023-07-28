@@ -7,18 +7,10 @@ async function getData(url) {
   data = await response.json()
   renderDB(data)
 }
-
 getData(url)
 
 
-
-function viewSingleCountry(name) {
-    let country = data.filter(country => country.name.common == name)
-    localStorage.setItem('viewCountry', JSON.stringify(country))
-    window.location.href = `country.html`
-}
-
-
+//display countries
 let countries = document.getElementById('countries')
 function renderDB(data) {
     let dataDB = ""
@@ -39,15 +31,19 @@ function renderDB(data) {
 }
 
 
+//view single countries on a separate page
+function viewSingleCountry(name) {
+  let country = data.filter(country => country.name.common == name)
+  localStorage.setItem('viewCountry', JSON.stringify(country))
+  window.location.href = `country.html`
+}
+
+
 //Search feature
 let searchInput = document.getElementById('search')
-
 searchInput.addEventListener('input', () => {
   let searchValue = searchInput.value.toUpperCase()
   let cardsDB = document.querySelectorAll(".cards");
-
-  console.log(searchValue)
-  console.log(cardsDB)
 
   for(let i = 0; i < cardsDB.length; i++) {
     let countryName = cardsDB[i].querySelector('h2').innerHTML
@@ -60,7 +56,9 @@ searchInput.addEventListener('input', () => {
 })
 
 //filter feature
-
-
-
-
+let region = document.getElementById("region")
+region.addEventListener("input", () => {
+  let regionValue = region.value
+  let selectedRegion = data.filter(country => country.region == regionValue)
+  renderDB(selectedRegion)
+})

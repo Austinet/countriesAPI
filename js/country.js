@@ -36,7 +36,6 @@ function displayCountry() {
     //borders
     let borders = country.borders?.map(element => {
       let borderName  = data.filter(country => country.cca3 == element)
-      borderName.forEach(country => console.log(country.name.common))
         return (`<a class="btn" onclick="viewBorderCountry('${borderName[0].name.common}')">${borderName[0].name.common}</a>`)
     }).join("")
 
@@ -44,7 +43,7 @@ function displayCountry() {
     let renderCountry = `
     <div class="country-container">
     <div class="country-image">
-       <img src="${country.flags.svg}" alt="${country.name.common} flag">
+       <img src="${country.flags.png}" alt="${country.name.common} flag">
     </div>
     <div class="country-details-container">
         <h2>${country.name.common}</h2>

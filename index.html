@@ -7,12 +7,12 @@
     <meta name="description" content="Countries REST API to display and search for all countries">
     <meta http-equiv="author" content="Udhe Austine Ogaga"> 
     <title>Countries REST API by Austinet</title>
-    <!-- fonts-->
+    <!-- font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;1,6..12,800&display=swap" rel="stylesheet">
-    <!-- icon -->
-    <link rel="stylesheet" href="css/all.min.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -21,7 +21,7 @@
     <header>
         <div class="header container">
             <h1>Where in the world?</h1>
-            <button id="mode-btn"><i class="far fa-moon"></i><span class="mode">Dark Mode</span></button>
+            <button id="mode-btn"><i class="far fa-moon"></i><span id="mode">Dark Mode</span></button>
         </div>
     </header>
 
@@ -33,16 +33,18 @@
                 <form action="">
                     <div class="form-control search-div">
                         <i class="fas fa-search"></i>
-                        <input type="search" name="search" id="search" placeholder="Search for a country..." on>
+                        <input type="search" name="search" id="search" placeholder="Search for a country...">
                     </div>
-                    <select name="region" id="region">
-                        <option value="default">Filter by Region</option>
-                        <option value="Africa">Africa</option>
-                        <option value="Americas">Americas</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Oceania">Oceania</option>
-                    </select>
+                    <div id="region">
+                        <p id="select-toggle"><span>Filter by Region</span> <i class="fas fa-chevron-down"></i></p>
+                        <ul id="select-list">
+                            <li>Africa</li>
+                            <li>Americas</li>
+                            <li>Asia</li>
+                            <li>Europe</li>
+                            <li>Oceania</li>                            
+                        </ul>
+                    </div>
                 </form>
             </div>
         </section>

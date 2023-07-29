@@ -17,7 +17,6 @@ function renderDB(data) {
     data.forEach(element => {
         dataDB += `
         <div class="cards" onclick="viewSingleCountry('${element.name.common}')">
-        <!-- <img src="img/Germany.JPG" alt="German flag"> -->
          <img src="${element.flags.png}" alt="${element.name.common} flag"> 
         <div class="card-details" >
             <h2>${element.name.common}</h2>
@@ -55,10 +54,21 @@ searchInput.addEventListener('input', () => {
   }
 })
 
+
 //filter feature
 let region = document.getElementById("region")
-region.addEventListener("input", () => {
-  let regionValue = region.value
-  let selectedRegion = data.filter(country => country.region == regionValue)
-  renderDB(selectedRegion)
+let selectToggle = document.getElementById("select-toggle")
+let selectList = document.getElementById("select-list")
+
+//toggle filter list
+selectToggle.addEventListener("click", () => {
+  selectList.classList.toggle("hidden")
+})
+
+let selectItems = document.querySelectorAll("#select-list li")
+selectItems.forEach(region => {
+  region.addEventListener("click", () => {
+    let selectedRegion = data.filter(country => country.region == region.textContent)
+    renderDB(selectedRegion)
+  })
 })

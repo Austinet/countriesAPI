@@ -18,12 +18,13 @@
 
 a {
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .container {
-    max-width: 85%;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 
@@ -36,14 +37,11 @@ a {
 .light-mode header,
 .light-mode button,
 .light-mode .cards,
-.light-mode #search-filter select,
+.light-mode #region ul,
+.light-mode #region p,
 .light-mode #search-filter input[type="search"],
 .light-mode a {
-    background-color: var(--white);
-    color: var(--Very-Dark-Blue);
-}
-
-.dark-mode .search-div i {
+    background-color: var(--White);
     color: var(--Very-Dark-Blue);
 }
 
@@ -55,7 +53,8 @@ a {
 .dark-mode header,
 .dark-mode button,
 .dark-mode .cards,
-.dark-mode #search-filter select,
+.dark-mode #region ul,
+.dark-mode #region p,
 .dark-mode #search-filter input[type="search"],
 .dark-mode #search-filter input[type="search"]::placeholder,
 .dark-mode a {
@@ -77,7 +76,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.4rem 0;
+    padding: 1.5rem;
 }
 
 .header h1 {
@@ -104,7 +103,8 @@ header {
 #search-filter form {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    position: relative;
 }
 
 .search-div {
@@ -114,13 +114,13 @@ header {
 .search-div i {
     position: absolute;
     left: 22px;
-    top: 13px;
+    top: 16px;
     font-size: 1rem;
 }
 
 #search-filter input[type="search"] {
-    width: 450px;
-    height: 45px;
+    width: 430px;
+    height: 50px;
     padding: 0.8rem 1rem 0.8rem 3.5rem;
     border: none;
     border-radius: 3px;
@@ -129,29 +129,51 @@ header {
     outline: none;
 }
 
-#search-filter select {
-    width: 250px;
-    height: 45px;
-    padding: 0 1rem;
-    border: none;
-    border-radius: 3px;
+#region p {
+    width: 230px;
+    padding: 0.9rem 1.5rem;
+    height: 50px;
+    border-radius: 5px;
     box-shadow: 0 0 2px var(--shadow-1);
     font-size: 1.1rem;
-    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#region ul {
+    margin-top: 0.5rem;
+    width: 230px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 2px var(--shadow-1);
+    font-size: 1.1rem;
+    position: absolute;
+    z-index: 2;
+}
+
+#region li {
+    list-style: none; 
+    padding: 0.3rem 0;
+    font-size: 1.3rem;
+}
+
+.hidden {
+    display: none;
 }
 
 
 /* countries section */
 #countries {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 3rem;
     justify-content: space-between;
 }
 
 .cards {
     border-radius: 5px;
     box-shadow: 0 0 3px var(--shadow-2);
-    margin-bottom: 3rem;
 }
 
 .cards img {
@@ -179,31 +201,7 @@ header {
 
 
 /* responsiveness - medium screens */
-@media(max-width: 850px) {
-    .container {
-        max-width: 93%;
-    }
-
-    #search-filter input[type="search"] {
-        width: 300px;
-    }
-}
-
-/* responsiveness - smaller screens */
-@media(max-width: 650px) {
-    html {
-        font-size: 14px;
-    }
-
-    header {
-        margin-bottom: 1.8rem;
-    }
-
-    .header h1 {
-        font-size: 1.3rem;
-        font-weight: 500;
-    }
-
+@media(max-width: 720px) {
     #search-filter form {
         flex-direction: column;
         justify-content: flex-start;
@@ -211,12 +209,31 @@ header {
     }
 
     #search-filter input[type="search"] {
-        width: 95%;
+        width: 100%;
         margin-bottom: 2rem;
     }
+}
 
-    #countries {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        justify-content: space-between;
+/* responsiveness - smaller screens */
+@media(max-width: 500px) {
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .header {
+        padding: 1.5rem;
+    }
+
+    header {
+        margin-bottom: 1.8rem;
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+        font-weight: 500;
     }
 }

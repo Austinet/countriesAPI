@@ -64,7 +64,7 @@ function displayCountry() {
         <div class="border-countries">
             <p>Border Countries: </p>
             <div class="borders">
-                ${borders ? borders : "No Border"}
+                ${borders ? borders : "<p>No Border</p>"}
             </div>
         </div>
     </div>

@@ -33,13 +33,13 @@ Users should be able to:
 
 ### Screenshot
 
-- ![Homepage Large Screen](screenshots/homepageLargeScreen.jpg)
-- ![Homepage Large Screen Dark Mode](screenshots/homePageLargeScreenDarkMode.jpg)
-- ![Home page Medium Screen](screenshots/mediumScreen.jpg)
-- ![Home page Small Screen](screenshots/smallScreen.jpg)
-- ![Single Country Large Screen](screenshots/singleCountry.jpg)
-- ![Single Country Large Screen Dark Mode](screenshots/singleCountryDarkMode.jpg)
-- ![Single Country Small Screen](screenshots/smallScreenSingleCountry.jpg)
+- ![Homepage Large Screen](screenshots/homeLargeScreen.JPG)
+- ![Homepage Large Screen Dark Mode](screenshots/homeLargeScreenDark.JPG)
+- ![Home page Medium Screen](screenshots/homeMediumScreen.JPG)
+- ![Home page Small Screen](screenshots/homeSmallScreen.JPG)
+- ![Single Country Large Screen](screenshots/singleCountry.JPG)
+- ![Single Country Large Screen Dark Mode](screenshots/singleCountryDarkMode.JPG)
+- ![Single Country Small Screen](screenshots/singleCountrySmallScreen.JPG)
 - ![Search Feature](screenshots/searchFeature.jpg)
 - ![Filter Feature](screenshots/filterFeature.jpg)
 
@@ -110,4 +110,3 @@ I've gotten a lot of experience while working with web based technologies like H
 ## Acknowledgments
 
 I will like to acknowledge God for giving me the grace to be patient with myself while going through the huddles of carrying out this project. And also Frontend mentor, KodeCamp team for this tasks where i got to consume data from APIs.
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
